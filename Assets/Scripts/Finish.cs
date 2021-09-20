@@ -8,7 +8,7 @@ public class Finish : MonoBehaviour
     {
         
         
-        UIManager.manager.ShowNextLevelPanel();
+        UIManager.manager.LoadNextLevel();
         GameManager.manager.ToFinishGame();
         
         

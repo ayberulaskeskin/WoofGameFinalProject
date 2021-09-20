@@ -61,7 +61,9 @@ public class PlayerController : MonoBehaviour
             case GameManager.GameState.Prepare:
                 print("prepare");
                 Prepare();
-                _health = 0;
+                _finish = false;
+                _health = 0f;
+                _power = 0;
                 
                 break;
             case GameManager.GameState.MainGame:
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour
                 Swipe();
                 //flip();
                 Move(moveTo);
+                _finish = false;
                 //_running = true;
                 
                 break;
@@ -446,8 +449,17 @@ public class PlayerController : MonoBehaviour
             } 
            
             yield return new WaitForSeconds(0.5f);
-            _health=_health-3f;
-            _power = _health/10f;
+            if (_health<5f)
+            {
+                _health = 0f;
+                _power = 0f;
+            }
+            else
+            {
+                _health=_health-5f;
+                _power = _health/10f;
+            }
+            
             UIManager.manager.PowerBar(_power);
             _player.tag = "Player";
             

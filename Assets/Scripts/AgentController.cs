@@ -16,11 +16,12 @@ public class AgentController : MonoBehaviour
     private void Awake()
     {
         _agent.GetComponent<NavMeshAgent>();
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
    
@@ -66,6 +67,7 @@ public class AgentController : MonoBehaviour
             AgentAnimator.SetTrigger("isFinish");
             _agent.stoppingDistance = 5;
         }
+       
 
       
        

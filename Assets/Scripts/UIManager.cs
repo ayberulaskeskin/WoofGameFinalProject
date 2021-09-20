@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public static UIManager manager;
@@ -14,6 +14,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider _progressBar;
     [SerializeField] private Slider _powerBar;
     [SerializeField]  TextMeshProUGUI _scoreText;
+    [SerializeField] TextMeshProUGUI _currentLevelText;
+    [SerializeField] TextMeshProUGUI _nextLevelText;
+    
+    private void Start()
+    {
+        LevelText(); 
+    }
+  
     private void Awake()
     {
         manager = this;   
@@ -21,7 +29,8 @@ public class UIManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        LevelManager.manager.NextLevel();
+        StartCoroutine(NextLevel());
+        
        
     }
     public void RestartLevel()
@@ -37,13 +46,20 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _retryPanel.SetActive(true);
     }
-    public void ShowNextLevelPanel()
+    IEnumerator NextLevel()
     {
+        yield return new WaitForSeconds(1f);
         _nextLevelPanel.SetActive(true);
     }
+    
     public void ProgressBar(float value)
     {
         _progressBar.value = value;
+    }
+    public void LevelText()
+    {
+        _currentLevelText.text = "" + (SceneManager.GetActiveScene().buildIndex +1 );
+        _nextLevelText.text = "" + (SceneManager.GetActiveScene().buildIndex + 2);
     }
     public void PowerBar(float value)
     {
