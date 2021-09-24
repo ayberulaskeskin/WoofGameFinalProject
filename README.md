@@ -1,5 +1,5 @@
 # WoofGameFinalProject
- SimpleHypercasualMobileGame
+## This reposity  includes the hyper casual graduation project made for bootcamp, organized by patika.dev with the contributions of Ofon.
 
 
 [level1](https://user-images.githubusercontent.com/52176996/134746532-3165e39f-a24f-4c8b-8e3b-ea0628ee1ead.mp4)
