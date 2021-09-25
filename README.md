@@ -1,5 +1,5 @@
-# WoofGameFinalProject
-## This reposity  includes the hyper casual graduation project made for Patika Mobile Game Bootcamp V, organized by patika.dev with the contributions of Ofon.
+# Patika Mobile Game Bootcamp V Final Project
+## This reposity  includes the hyper casual game graduation project made for Patika Mobile Game Bootcamp V, organized by patika.dev with the contributions of Ofon.
 ### The following videos contain the levels and gameplay of the game.
 
 
